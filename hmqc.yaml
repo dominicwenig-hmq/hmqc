@@ -8,6 +8,7 @@ spec:
   cpu: '2'
   memory: '2G'
   logLevel: INFO
+  controllerTemplate: cluster-stateful-set.yaml
   configMaps:
   - name: hivemq-license
     path: /opt/hivemq/license

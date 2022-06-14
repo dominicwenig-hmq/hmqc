@@ -4,7 +4,7 @@ metadata:
   name: hivemq-c
 spec:
   hivemqVersion: k8s-4.7.6
-  nodeCount: 2
+  nodeCount: 3
   cpu: '2'
   memory: '2G'
   logLevel: INFO

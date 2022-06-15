@@ -13,6 +13,11 @@ spec:
     statefulSet: 
       surgeNode: true
       surgeNodeCleanupPvc: true
+  extensions:
+  - configMap: kafka-ext-conf
+    enabled: true
+    extensionUri: preinstalled
+    name: hivemq-kafka-extension
   configMaps:
   - name: hivemq-license
     path: /opt/hivemq/license

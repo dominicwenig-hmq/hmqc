@@ -3,7 +3,7 @@ kind: HiveMQCluster
 metadata:
   name: hivemq-c
 spec:
-  hivemqVersion: k8s-4.7.6
+  hivemqVersion: k8s-4.7.7
   nodeCount: 3
   cpu: '2'
   memory: '2G'

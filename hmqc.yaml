@@ -5,7 +5,7 @@ metadata:
 spec:
   hivemqVersion: k8s-4.8.2
   nodeCount: 3
-  cpu: '4'
+  cpu: '8'
   memory: '4G'
   logLevel: INFO
   controllerTemplate: cluster-stateful-set.yaml

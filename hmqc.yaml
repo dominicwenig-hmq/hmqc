@@ -3,10 +3,10 @@ kind: HiveMQCluster
 metadata:
   name: hivemq-c
 spec:
-  hivemqVersion: k8s-4.8.2
-  nodeCount: 3
-  cpu: '8'
-  memory: '4G'
+  hivemqVersion: k8s-4.8.4
+  nodeCount: 2
+  cpu: '2'
+  memory: '2G'
   logLevel: INFO
   controllerTemplate: cluster-stateful-set.yaml
   operatorHints:

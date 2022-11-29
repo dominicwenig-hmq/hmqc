@@ -132,7 +132,7 @@ spec:
             <truststore>
               <path>/opt/hivemq/truststore.jks</path>
               <password>${ENV:CLUSTER_TRUSTSTORE_PASS}</password>
-            </trusttore>            
+            </truststore>            
         </tls>
     </tls-tcp-listener>
   mqtt:

@@ -58,12 +58,12 @@ spec:
   #  path: /opt/hivemq/license
   configMaps:
   - name: logback
-    path: /opt/hivemq/conf/logback.xml
+    path: /opt/hivemq/conf
   secrets:
   - name: hivemq-license
     path: /opt/hivemq/license
   - name: hivemq-jks
-    path: /opt/hivemq/conf
+    path: /opt/hivemq
   ports:
   - name: "mqtt"
     port: 1883
@@ -105,7 +105,7 @@ spec:
         <proxy-protocol>true</proxy-protocol>
         <tls>
             <keystore>
-                <path>/opt/hivemq/conf/keystore.jks</path>
+                <path>/opt/hivemq/keystore.jks</path>
                 <password>${ENV:keystore-pass}</password>
                 <private-key-password>${ENV:keystore-pass}</private-key-password>
             </keystore>
@@ -118,13 +118,13 @@ spec:
         <proxy-protocol>true</proxy-protocol>
         <tls>
             <keystore>
-                <path>/opt/hivemq/conf/keystore.jks</path>
+                <path>/opt/hivemq/keystore.jks</path>
                 <password>${ENV:keystore-pass}</password>
                 <private-key-password>${ENV:keystore-pass}</private-key-password>
             </keystore>
             <client-authentication-mode>REQUIRED</client-authentication-mode>
             <truststore>
-              <path>/opt/hivemq/conf/truststore.jks</path>
+              <path>/opt/hivemq/truststore.jks</path>
               <password>${ENV:truststore-pass}</password>
             </trusttore>            
         </tls>

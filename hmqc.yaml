@@ -7,8 +7,8 @@ spec:
   #- name: init-shared
   #  patch:
   #  - '[{"op":"add","path":"/imagePullPolicy","value":"IfNotPresent"}]'
-  patch:
-  - "{\"spec\": {\"template\": {\"spec\": {\"initContainers\": [{\"name\": \"init-shared\",\"imagePullPolicy\": \"IfNotPresent\"}]}}}}"
+  #patch:
+  #- "{\"spec\": {\"template\": {\"spec\": {\"initContainers\": [{\"name\": \"init-shared\",\"imagePullPolicy\": \"IfNotPresent\"}]}}}}"
   hivemqVersion: k8s-4.9.1
   nodeCount: 2
   cpu: '2'

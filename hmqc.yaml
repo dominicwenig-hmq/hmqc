@@ -70,19 +70,19 @@ spec:
     expose: true
     patch:
     - '[{"op":"add","path":"/spec/selector/hivemq.com~1node-offline","value":"false"},{"op":"add","path":"/metadata/annotations","value":{"service.spec.externalTrafficPolicy":"Local"}}]'
-    - '[{"op":"add","path":"/spec/type","value":"LoadBalancer"}]'
+    #- '[{"op":"add","path":"/spec/type","value":"LoadBalancer"}]'
   - name: "mqtts-pub"
     port: 8883
     expose: true
     patch:
     - '[{"op":"add","path":"/spec/selector/hivemq.com~1node-offline","value":"false"},{"op":"add","path":"/metadata/annotations","value":{"service.spec.externalTrafficPolicy":"Local"}}]'
-    - '[{"op":"add","path":"/spec/type","value":"LoadBalancer"}]'
+    #- '[{"op":"add","path":"/spec/type","value":"LoadBalancer"}]'
   - name: "mqtts-int"
     port: 8884
     expose: true
     patch:
     - '[{"op":"add","path":"/spec/selector/hivemq.com~1node-offline","value":"false"},{"op":"add","path":"/metadata/annotations","value":{"service.spec.externalTrafficPolicy":"Local"}}]'
-    - '[{"op":"add","path":"/spec/type","value":"LoadBalancer"}]'
+    #- '[{"op":"add","path":"/spec/type","value":"LoadBalancer"}]'
   - name: "cc"
     port: 8080
     expose: true

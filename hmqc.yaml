@@ -59,6 +59,7 @@ spec:
   configMaps:
   - name: logback
     path: /opt/hivemq/conf
+    subPath: logback.xml
   secrets:
   - name: hivemq-license
     path: /opt/hivemq/license

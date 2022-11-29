@@ -3,6 +3,10 @@ kind: HiveMQCluster
 metadata:
   name: hivemq-c
 spec:
+  initContainers:
+  - name: init-shared
+    patch:
+    - '[{"op":"add","path":"/imagePullPolicy","value":"IfNotPresent"}]'
   hivemqVersion: k8s-4.9.1
   nodeCount: 2
   cpu: '2'

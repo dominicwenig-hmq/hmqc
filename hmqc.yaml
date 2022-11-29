@@ -63,11 +63,9 @@ spec:
   - name: hivemq-license
     path: /opt/hivemq/license
   - name: keystore-jks
-    path: /opt/hivemq/conf
-    subPath: keystore.jks
+    path: /opt/hivemq/conf/keystore.jks
   - name: truststore-jks
-    path: /opt/hivemq/conf
-    subPath: truststore.jks
+    path: /opt/hivemq/conf/truststore.jks
   ports:
   - name: "mqtt"
     port: 1883

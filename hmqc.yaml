@@ -110,7 +110,6 @@ spec:
         <name>mqtts-pub</name>
         <port>8883</port>
         <bind-address>0.0.0.0</bind-address>
-        <proxy-protocol>true</proxy-protocol>
         <tls>
             <keystore>
                 <path>/opt/hivemq/keystore.jks</path>
@@ -123,7 +122,6 @@ spec:
         <name>mqtts-int</name>
         <port>8884</port>
         <bind-address>0.0.0.0</bind-address>
-        <proxy-protocol>true</proxy-protocol>
         <tls>
             <keystore>
                 <path>/opt/hivemq/keystore.jks</path>

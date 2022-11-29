@@ -34,12 +34,12 @@ spec:
     valueFrom:
       secretKeyRef:
         name: hivemq-cluster-tls-secrets
-        key: keystore-pass
+        key: KEYSTORE_PASS
   - name: CLUSTER_TRUSTSTORE_PASS
     valueFrom:
       secretKeyRef:
         name: hivemq-cluster-tls-secrets
-        key: truststore-pass
+        key: TRUSTSTORE_PASS
   extensions:
   - configMap: kafka-ext-conf
     enabled: false
@@ -114,8 +114,8 @@ spec:
         <tls>
             <keystore>
                 <path>/opt/hivemq/keystore.jks</path>
-                <password>${ENV:keystore-pass}</password>
-                <private-key-password>${ENV:keystore-pass}</private-key-password>
+                <password>${ENV:CLUSTER_KEYSTORE_PASS}</password>
+                <private-key-password>${ENV:CLUSTER_KEYSTORE_PASS}</private-key-password>
             </keystore>
         </tls>
     </tls-tcp-listener>
@@ -127,13 +127,13 @@ spec:
         <tls>
             <keystore>
                 <path>/opt/hivemq/keystore.jks</path>
-                <password>${ENV:keystore-pass}</password>
-                <private-key-password>${ENV:keystore-pass}</private-key-password>
+                <password>${ENV:CLUSTER_KEYSTORE_PASS}</password>
+                <private-key-password>${ENV:CLUSTER_KEYSTORE_PASS}</private-key-password>
             </keystore>
             <client-authentication-mode>REQUIRED</client-authentication-mode>
             <truststore>
               <path>/opt/hivemq/truststore.jks</path>
-              <password>${ENV:truststore-pass}</password>
+              <password>${ENV:CLUSTER_TRUSTSTORE_PASS}</password>
             </trusttore>            
         </tls>
     </tls-tcp-listener>

@@ -10,11 +10,11 @@ spec:
   cpu: '2'
   memory: '2G'
   logLevel: INFO
-  controllerTemplate: cluster-stateful-set.yaml
-  operatorHints:
-    statefulSet: 
-      surgeNode: true
-      surgeNodeCleanupPvc: true
+  #controllerTemplate: cluster-stateful-set.yaml
+  #operatorHints:
+  #  statefulSet: 
+  #    surgeNode: true
+  #    surgeNodeCleanupPvc: true
   env:
   - name: AUTH_EXT_BASIC_AUTH_ID
     valueFrom:

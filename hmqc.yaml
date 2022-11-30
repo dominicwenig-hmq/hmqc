@@ -3,8 +3,8 @@ kind: HiveMQCluster
 metadata:
   name: hivemq-c
 spec:  
-  #imagePullSecrets: 
-  #- hivemq-pull-secret
+  imagePullSecrets: 
+  - hivemq-pull-secret
   hivemqVersion: hivemq/hivemq4:k8s-4.9.1
   nodeCount: 2
   cpu: '2'

@@ -5,7 +5,7 @@ metadata:
 spec:  
   imagePullSecrets: 
   - hivemq-pull-secret
-  hivemqVersion: k8s-4.9.1
+  hivemqVersion: k8s-4.9.0
   nodeCount: 2
   cpu: '2'
   memory: '2G'

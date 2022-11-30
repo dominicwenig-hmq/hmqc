@@ -67,7 +67,7 @@ spec:
   - name: hivemq-license
     path: /opt/hivemq/license
   - name: hivemq-jks
-    path: /opt/hivemq
+    path: /opt/hivemq/certs
   ports:
   - name: "mqtt"
     port: 1883
@@ -108,7 +108,7 @@ spec:
         <bind-address>0.0.0.0</bind-address>
         <tls>
             <keystore>
-                <path>/opt/hivemq/keystore.jks</path>
+                <path>/opt/hivemq/certs/keystore.jks</path>
                 <password>${ENV:CLUSTER_KEYSTORE_PASS}</password>
                 <private-key-password>${ENV:CLUSTER_KEYSTORE_PASS}</private-key-password>
             </keystore>
@@ -120,13 +120,13 @@ spec:
         <bind-address>0.0.0.0</bind-address>
         <tls>
             <keystore>
-                <path>/opt/hivemq/keystore.jks</path>
+                <path>/opt/hivemq/certs/keystore.jks</path>
                 <password>${ENV:CLUSTER_KEYSTORE_PASS}</password>
                 <private-key-password>${ENV:CLUSTER_KEYSTORE_PASS}</private-key-password>
             </keystore>
             <client-authentication-mode>REQUIRED</client-authentication-mode>
             <truststore>
-              <path>/opt/hivemq/truststore.jks</path>
+              <path>/opt/hivemq/certs/truststore.jks</path>
               <password>${ENV:CLUSTER_TRUSTSTORE_PASS}</password>
             </truststore>            
         </tls>

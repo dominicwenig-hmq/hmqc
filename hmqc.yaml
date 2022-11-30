@@ -3,12 +3,9 @@ kind: HiveMQCluster
 metadata:
   name: hivemq-c
 spec:
-  #initContainers:
-  #- name: init-shared
-  #  patch:
-  #  - '[{"op":"add","path":"/imagePullPolicy","value":"IfNotPresent"}]'
-  #patch:
-  #- "{\"spec\": {\"template\": {\"spec\": {\"initContainers\": [{\"name\": \"init-shared\",\"imagePullPolicy\": \"IfNotPresent\"}]}}}}"
+  rbac:
+    imagePullSecrets: 
+    - name: hivemq-pull-secret
   hivemqVersion: k8s-4.9.1
   nodeCount: 2
   cpu: '2'
@@ -49,17 +46,16 @@ spec:
     enabled: true
     extensionUri: preinstalled
     name: hivemq-enterprise-security-extension
-    # Note that this is just an example initialization routine. Make sure this points to the current JDBC version you require for your configuration.
     initialization: |
       [[ -e /conf-override/extensions/hivemq-enterprise-security-extension/permissions_client_cert.xml ]] &&
       rm -f $(pwd)/conf/permissions_client_cert.xml &&
-      cp -s /conf-override/extensions/hivemq-enterprise-security-extension/permissions_client_cert.xml $(pwd)/conf/permissions_client_cert.xml &&
+      cp -s /conf-override/extensions/hivemq-enterprise-security-extension/permissions_client_cert.xml $(pwd)/permissions_client_cert.xml &&
       [[ -e /conf-override/extensions/hivemq-enterprise-security-extension/enterprise-security-extension.xml ]] &&
       rm -f $(pwd)/conf/enterprise-security-extension.xml &&
       cp -s /conf-override/extensions/hivemq-enterprise-security-extension/enterprise-security-extension.xml $(pwd)/conf/enterprise-security-extension.xml
   - configMap: auth-ext-conf
     enabled: true
-    extensionUri: "https://github.com/dominicwenig-hmq/hmqc/releases/download/1.0.1/auth-extension.zip"
+    extensionUri: https://github.com/dominicwenig-hmq/hmqc/releases/download/1.0.1/auth-extension.zip
     name: auth-extension
   #configMaps:
   #- name: hivemq-license

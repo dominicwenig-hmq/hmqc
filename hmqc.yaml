@@ -48,8 +48,9 @@ spec:
     name: hivemq-enterprise-security-extension
     initialization: |
       [[ -e /conf-override/extensions/hivemq-enterprise-security-extension/permissions_client_cert.xml ]] &&
-      rm -f $(pwd)/conf/permissions_client_cert.xml &&
-      cp -s /conf-override/extensions/hivemq-enterprise-security-extension/permissions_client_cert.xml $(pwd)/permissions_client_cert.xml &&
+      rm -f $(pwd)/permissions_client_cert.xml &&
+      cp -s /conf-override/extensions/hivemq-enterprise-security-extension/permissions_client_cert.xml $(pwd)/permissions_client_cert.xml
+
       [[ -e /conf-override/extensions/hivemq-enterprise-security-extension/enterprise-security-extension.xml ]] &&
       rm -f $(pwd)/conf/enterprise-security-extension.xml &&
       cp -s /conf-override/extensions/hivemq-enterprise-security-extension/enterprise-security-extension.xml $(pwd)/conf/enterprise-security-extension.xml
